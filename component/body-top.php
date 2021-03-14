@@ -1,1 +1,0 @@
-<script>NProgress.start();</script>
