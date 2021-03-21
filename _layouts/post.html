@@ -1,39 +1,39 @@
 ---
-# Copyright (c) 2017 Florian Klampfer <https://qwtel.com/>
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
-layout: base
+layout: default
 ---
+<article class="post">
 
-{% include post.html post=page link_title=false %}
+  <h1 class="post-title">{{ page.title }}</h1>
 
-<hr class="dingbat related" />
+  <p class="post-meta">
+    <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%d-%m-%Y" }}</time>
 
-{% assign addons = site.hydejack.post_addons %}
-{% unless addons %}{% assign addons = "about,newsletter,related,random" | split:"," %}{% endunless %}
-{% for addon in addons %}
-  {% case addon %}
-  {% when 'about' %}
-     {% include about.html %}
-  {% when 'related' %}
-    {% include related-posts.html post=post %}
-  {% else %}
-  {% endcase %}
-{% endfor %}
+    {% if page.author %}
+      &nbsp;/&nbsp;
+      <span>{{ page.author }}</span>
+    {% endif %}
+  </p>
+
+  <div class="post-content">
+
+    {{ content }}
+
+    <div class="post-links">
+      {% if page.next.url %}
+        <a class="link-to-post" href="{{ page.next.url | relative_url}}">
+          <span class="link-to-post__next">&#10535; &nbsp;Next post</span>
+          <span class="link-to-post__title">{{ page.next.title }}</span>
+        </a>
+      {% endif %}
+
+      {% if page.previous.url %}
+        <a class="link-to-post" href="{{ page.previous.url | relative_url}}">
+          <span class="link-to-post__prev">&#10535; &nbsp;Previous post</span>
+          <span class="link-to-post__title">{{ page.previous.title }}</span>
+        </a>
+      {% endif %}
+    </div>
+
+  </div>
+
+</article>
