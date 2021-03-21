@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Example content
+title: LIUAO 练习
 description: >
   This is a normal paragraph following a header.
   GitHub is a code hosting platform for version control and collaboration.
@@ -10,7 +10,6 @@ tags: [hydejack]
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](another-page).
 
 There should be whitespace between paragraphs.
 
