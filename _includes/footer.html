@@ -1,9 +1,5 @@
-<div class="container">
-  <footer>
-    <p class="text-muted credit">
-      &copy; {{ site.time | date: '%Y' }} {{ site.name }} &middot;
-      <a href="https://github.com/arnp/herring-cove"> Herring Cove for Jekyll </a>
-      {{ site.time }}
-    </p>
-  </footer>
-</div>
+{% include svg-icons.html %}
+
+{% if site.footer-text %}
+<p>{{ site.footer-text }}</p>
+{% endif %}
