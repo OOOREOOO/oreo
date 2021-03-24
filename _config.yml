@@ -1,44 +1,24 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: IT-блог
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Blog with theme Future Imperfect<br>
 baseurl: "" # the subpath of your site, e.g. /blog
-lang: "en"
-url: "http://localhost:4000" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
-disqus_username:
+url: "https://future-imperfect.kaptn.ru" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+author:
+  name: 'Viktoriya Kapitonenko'
+  last_name: 'Kapitonenko'
+  cv: '//kaptn.ru'
+  avatar: '/images/avatar.jpeg'
+  github_username:  kaptn3  
+  email: vika@kaptn.ru
+  vk_id: id201664979
+  telegram_name: vikapitoshka 
+  logo: '/images/logo.svg'
 
 # Build settings
 markdown: kramdown
-permalink: /:categories/:title/
 
-# Posts settings
-future: true
-safe: false
-lsi: false
-excerpt_separator: "\n\n"
-
-# Theme settings
-compress_html:
-  comments: ["<!-- ", " -->"]
-  clippings: all
-  endings: all
+permalink: /:categories/:year/:title.html
 
 
-sass:
-  sass_dir: assets/_sass
-  style: compressed
-
-
-images: '/assets/images'

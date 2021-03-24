@@ -1,20 +1,35 @@
-<header class="main-header content-wrapper">
+<!-- Header -->
+  <header id="header">
+    <h1><a href="{{ "/" | prepend: site.baseurl }}">vikapitoshka</a></h1>
+    <nav class="links">
+      <ul>
 
-  <input type="checkbox" id="menu-checkbox" />
+        {% for tag in site.data.links %}
+          <li><a href="{{ tag.href | prepend: site.baseurl }}">{{ tag.name }}</a></li>
+        {% endfor %}
+        
+      </ul>
 
-  <nav class="center-wrapper nav-main">
+    </nav>
+    <nav class="main">
+      <ul>
+        <li class="menu">
+          <a href="#menu"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
+    </nav>
 
-    <a class="blog-logo" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    {% for my_page in site.pages %}
-      {% if my_page.active %}
-        <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-      {% endif %}
-    {% endfor %}
-
-    <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
-
-    <label for="menu-checkbox" class="toggle-button" data-open="☰" data-close="☰" onclick></label>
-  </nav>
-
-</header>
+    <!-- Menu -->
+    <section id="menu">
+      <!-- Search -->
+      <section>
+        <ul class="links">
+          
+          {% for tag in site.data.links %}
+          <li><a href="{{ tag.href | prepend: site.baseurl }}"><h3>{{ tag.name }}</h3></a></li>
+          {% endfor %}
+          
+        </ul>
+      </section>
+    </section>
+  </header>
